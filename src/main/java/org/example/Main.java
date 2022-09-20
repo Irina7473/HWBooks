@@ -5,12 +5,13 @@ import org.example.Controllers.ControllerCatalog;
 public class Main {
     public static void main(String[] args) {
         ControllerCatalog cc = new ControllerCatalog();
-        System.out.println(cc.getCatalogById(1).toString());
+        //System.out.println(cc.getCatalogById(1).toString());
         cc.addCatalog("bookName", "authorName", 2000, "style", 0, "description");
         cc.addCatalog("bookName", "authorName", 2000, "style", 0, "description");
         cc.addCatalog("bookName", "authorName", 2000, "style", 0, "description");
         cc.addCatalog("bookName", "authorName", 2000, "style", 0, "description");
         cc.updateCatalogById(2, "Бесы", "Достоевский", 0, "", 0, "");
+        System.out.println(cc.getCatalogById(1).toString());
         System.out.println(cc.getCatalogByBookName("Бесы").toString());
         cc.removeCatalogById(3);
 
