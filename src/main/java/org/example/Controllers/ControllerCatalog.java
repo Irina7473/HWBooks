@@ -1,14 +1,16 @@
 package org.example.Controllers;
 
-import jakarta.transaction.*;
+import org.example.HibernateSessionGet;
 import org.example.Models.Catalog;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class ControllerCatalog {
     public ControllerCatalog(){}
 
     public Catalog getCatalogById (int id) {
         Session session = HibernateSessionGet.getSessionFactory().openSession();
-        Transaction tx= session.beginTransaction();
+        Transaction tx = session.beginTransaction();
         Catalog catalog= session.get(Catalog.class, id);
         tx.commit();
         return catalog;

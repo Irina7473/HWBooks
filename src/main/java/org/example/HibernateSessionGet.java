@@ -13,8 +13,8 @@ public class HibernateSessionGet {
     public static SessionFactory getSessionFactory(){
         if(sessionFactory == null) {
             Configuration config = new Configuration().configure();
-            config.addAnnotatedClass(Item.class);
-            config.addAnnotatedClass(Store.class);
+            config.addAnnotatedClass(Catalog.class);
+
 
             StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
                     .applySettings(config.getProperties());
