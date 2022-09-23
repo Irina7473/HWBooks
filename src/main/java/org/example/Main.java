@@ -1,39 +1,38 @@
 package org.example;
 
 import org.example.Controllers.ControllerCatalog;
+import org.example.Models.Catalog;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         ControllerCatalog cc = new ControllerCatalog();
-        //System.out.println(cc.getCatalogById(1).toString());
-        cc.addCatalog("bookName", "authorName", 2000, "style", 0, "description");
-        cc.addCatalog("bookName", "authorName", 2000, "style", 0, "description");
-        cc.addCatalog("bookName", "authorName", 2000, "style", 0, "description");
-        cc.addCatalog("bookName", "authorName", 2000, "style", 0, "description");
-        cc.updateCatalogById(2, "Бесы", "Достоевский", 0, "", 0, "");
-        System.out.println(cc.getCatalogById(1).toString());
-        System.out.println(cc.getCatalogByBookName("Бесы").toString());
-        cc.removeCatalogById(3);
+        /*System.out.println(cc.getCatalogById(1).toString());
+        cc.addCatalog(new Catalog(0,"bookName", "authorName", 2000, "style", 0, "description"));
+        cc.addCatalog("Идиот", "Достоевский", 1873, "роман", 500, "");
+        cc.removeCatalogById(2);
+        cc.updateCatalogById(5, "Бесы", "Достоевский", 1872, "роман", 500, "");
+        System.out.println(cc.getCatalogById(5).toString());*/
+        String bookName =  "Идиот";
+        List <Catalog> resultsBookName = cc.getCatalogByBookName(bookName);
+        if (resultsBookName.size() > 0 || resultsBookName !=null) {
+            for (Catalog c : resultsBookName) {
+                System.out.println(c.toString());
+            }
+        }
+        else {System.out.println("Книги с названием " + bookName + " не найдены");}
+
+        String word =  "esc";
+        List <Catalog> resultsSearchWord = cc.getCatalogBySearchWord(word);
+        if (resultsSearchWord.size() > 0 || resultsSearchWord !=null) {
+            for (Catalog c : resultsSearchWord) {
+                System.out.println(c.toString());
+            }
+        }
+        else {System.out.println("Книги, содержащие в описании слово " + word + " не найдены");}
+
 
 
     }
 }
-
-/*
-Задание 2
-Создайте веб-приложение для отображения данных из первого задания. Используйте Hibernate для доступа к данным.
-Задание 3
-Добавьте ко второму заданию возможность добавления данных.
-Задание 4
-Добавьте к третьему заданию возможность удаления данных.
-Задание 5
-Добавьте к четвертому заданию возможность редактирования данных.
-Задание 6
-Добавьте к пятому заданию возможность поиска книг по таким параметрам:
-■ Название книги;
-■ ФИО автора;
-■ Год выпуска;
-■ Стиль книги;
-■ Количество страниц;
-■ Слово для поиска в кратком описании книги
- */

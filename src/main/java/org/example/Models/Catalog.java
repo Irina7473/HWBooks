@@ -15,7 +15,7 @@ public class Catalog {
     @Column(name = "author_name")
     private String authorName;
 
-    @Column(name = "year_ issue")
+    @Column(name = "year_issue")
     private int yearIssue;
 
     @Column(name = "style")
@@ -62,8 +62,8 @@ public class Catalog {
 /*
  `id` INT NOT NULL AUTO_INCREMENT,
   `book_name` VARCHAR(45) NOT NULL,
-  ` author_name` VARCHAR(45) NOT NULL,
-  `year_ issue` TIMESTAMP(2) NULL,
+  `author_name` VARCHAR(45) NOT NULL,
+  `year_issue` INT NULL,
   `style` VARCHAR(45) NULL,
   `pages` INT NOT NULL,
   `description` VARCHAR(45) NULL,
